@@ -7,16 +7,16 @@
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
  * @author renob
  */
 public class NewEmptyJUnitTest {
-    
+    @Test
     public void demarrerTest() {
         
         EntityManagerFactory f = Persistence.createEntityManagerFactory("PU");
     
-    }}
+    }
+}

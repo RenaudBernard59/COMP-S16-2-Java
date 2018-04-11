@@ -6,11 +6,14 @@
 package boutique.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 
 /**
@@ -24,9 +27,16 @@ public class Commande implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+//    @ManyToOne
+//    @JoinColumn(name = "produit_id")
+//    private Produit produit;
+    
     @ManyToOne
-    @JoinColumn(name = "produit_id")
-    private Produit produit;
+    @JoinTable(name = "commande_produit")
+    private List<Produit> produits = new ArrayList<>();
+
+    
+    
     
     @ManyToOne
     @JoinColumn(name = "client_id")

@@ -28,6 +28,10 @@ public class Commande implements Serializable {
     @JoinColumn(name = "produit_id")
     private Produit produit;
     
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private Client client;
+    
     public Long getId() {
         return id;
     }

@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 
 /**
  *
@@ -23,9 +24,11 @@ public class Message implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private Long client_emmeteur_id;
+    @JoinColumn(name = "emmeteur_id")
+    private Client client_emmeteur_id;
     
-    
+    @JoinColumn(name = "receveur_id")
+    private Client client_receveur_id;
     
     public Long getId() {
         return id;

@@ -6,10 +6,13 @@
 package boutique.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -23,6 +26,14 @@ public class Client implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @OneToMany(mappedBy = "client_emmeteur_id")
+    private List<Message> messagesEmis = new ArrayList<>();
+    
+    @OneToMany(mappedBy = "client_receveur_id")
+    private List<Message> messagesRecus = new ArrayList<>();
+    
+    
+    
     public Long getId() {
         return id;
     }

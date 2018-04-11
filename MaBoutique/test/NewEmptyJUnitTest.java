@@ -16,7 +16,7 @@ public class NewEmptyJUnitTest {
     @Test
     public void demarrerTest() {
         
-        EntityManagerFactory f = Persistence.createEntityManagerFactory("PU");
+        EntityManagerFactory f = Persistence.createEntityManagerFactory("MaBoutiquePU");
     
     }
 }

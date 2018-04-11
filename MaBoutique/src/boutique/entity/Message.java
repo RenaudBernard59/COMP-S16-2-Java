@@ -23,6 +23,10 @@ public class Message implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    private Long client_emmeteur_id;
+    
+    
+    
     public Long getId() {
         return id;
     }
